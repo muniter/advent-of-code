@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZE 4
-int ind(int i)
+static inline int ind(int i)
 {
-  return abs(SIZE * (i < 0) + i - SIZE * (i >= SIZE));
-  // return (SIZE + (i % SIZE)) % SIZE;
+  return ((i % SIZE) + SIZE) % SIZE;
 }
 
 int main (int argc, char *argv[])
